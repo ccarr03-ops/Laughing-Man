@@ -1,4 +1,6 @@
-const SQUARE_COUNT = 3;
+const SQUARE_COUNT = 30;
+const SPEED = 2;
+const TIMER_SPEED = 100;
 const firstSquare = document.querySelector("#square");
 firstSquare.style.left = "225px"; //width/2 - boxwidth/2
 firstSquare.style.top = "175px";
@@ -14,14 +16,14 @@ for(let i = 0; i<SQUARE_COUNT; i++){
     square.alt="Catch the laughing man";
     square.className = "square";
     square.style.left = "225px";
-    square.style.top = "1755px";
+    square.style.top = "175px";
     box.appendChild(square);
 }
 
 Array.from(box.children).forEach(
     (element) =>{
-        let dx = SPEED;
-        let dy = SPEED;
+        let dx = SPEED * (Math.random()*2-1);
+        let dy = SPEED * (Math.random()*2-1)
         let x = parseInt(element.style.left);
         let y = parseInt(element.style.top);
         setInterval(()=>{

@@ -17,3 +17,18 @@ for(let i = 0; i<SQUARE_COUNT; i++){
     square.style.top = "1755px";
     box.appendChild(square);
 }
+
+Array.from(box.children).forEach(
+    (element) =>{
+        let dx = SPEED;
+        let dy = SPEED;
+        let x = parseInt(element.style.left);
+        let y = parseInt(element.style.top);
+        setInterval(()=>{
+            x = x+dx;
+            y = y+dy;
+            element.style.left = x+"px";
+            element.style.top = y+"px";
+        }, TIMER_SPEED);
+    }
+);
